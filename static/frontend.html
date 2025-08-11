@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>MovieNight Finder</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js" defer></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+
+<body>
+    <header class="container">
+        <div class="header-content">
+            <h1>MovieNight Finder</h1>
+            <nav>
+                <ul class="nav nav-list">
+                    <li><a href="#anwendungsbeschreibung">Information</a></li>
+                    <li><a href="#eingabebereich">Eingabe</a></li>
+                    <li><a href="#ausgabebereich">Ausgabe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <section class="column">
+                <div class="text-block">
+                    <h1>Finden Sie Ihren <b class="highlight">perfekten Film</b></h1>
+                    <p><b>Jeder kennt das Problem: Man möchte am Abend mit einem guten Film abschalten. Doch die endlose
+                            Suche nach dem passenden Film raubt einem schon vorher die Energie.</b></p>
+                    <p>Genau hier hilft dir der <b>MovieNight Finder</b>: Einfach Genre, Sprache und Streamingdienst
+                        auswählen und in wenigen Sekunden bekommst du die aktuellen Top-Filme, die zu deinen Vorlieben
+                        passen. Kein langes Suchen mehr, einfach zurücklehnen und genissen.</p>
+                </div>
+                <img src="img/heroIMG.png" alt="Filmabend">
+            </section>
+        </section>
+
+        <section id="anwendungsbeschreibung">
+            <div class="subtitle">
+                <h2>So <b class="highlight">funktionierts</b>:</h2>
+                <p>In drei einfachen Schitte, finden du schon die aktuell Trendigsten Filme, die perfekt zu deinen Vorlieben passen:</p>
+            </div>
+            <div class="column">
+                <img src="img/how_it_works.png" alt="Anleitung MovieNight Finder">
+                <section class="step-cards">
+
+                    <div class="card">
+                        <div class="step-number"><b>1</b></div>
+                        <div>
+                            <h3>Präferenzen auswählen</h3>
+                            <p>Wähle dein bevorzugtes Genre, die Sprache und den gewünschten Stremingdienst aus.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="step-number"><b>2</b></div>
+                        <div>
+                            <h3>Empfelungen erhalten</h3>
+                            <p>Basierend auf deinen Eingaben präsentieren wir die passende Filme, welche aktuell beliebt sind!</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="step-number"><b>3</b></div>
+                        <div>
+                            <h3>Film geniessen</h3>
+                            <p>Wähle deinen Favoriten aus und markiere ihn, damit er dir beim nächsten Mal nicht erneut vorgeschlagen wird.</p>
+                            <p>Und jetzt lehne zurück und geniesse den Film!</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section id="eingabebereich">
+            <div class="subtitle">
+                <h2>Film <b class="highlight">finden</b>:</h2>
+                <p>Geben Sie hier nun Ihre Filter ein</p>
+            </div>
+
+            <form id="film-filter-form" class="movie-form">
+                <div class="form-grid">
+                    <div>
+                        <label>Genre <span class="required">*</span></label>
+                        <select id="genre" required>
+                            <option value="28">Action</option>
+                            <option value="35">Komödie</option>
+                            <option value="18">Drama</option>
+                            <option value="27">Horror</option>
+                            <option value="10749">Romantik</option>
+                            <option value="878">Science-Fiction</option>
+                            <option value="99">Dokumentation</option>
+                            <option value="53">Thriller</option>
+                        </select>
+                        <div class="error-message" id="genre-error"></div>
+                    </div>
+
+                    <div>
+                        <label>Sprache <span class="required">*</span></label>
+                        <select id="sprache" required>
+                            <option value="de">Deutsch</option>
+                            <option value="en">Englisch</option>
+                            <option value="fr">Französisch</option>
+                            <option value="it">Italienisch</option>
+                        </select>
+                        <div class="error-message" id="sprache-error"></div>
+                    </div>
+
+                    <div>
+                        <label>Streaming <span class="required">*</span></label>
+                        <select id="streamingplattform" required>
+                            <option value="8">Netflix</option>
+                            <option value="9">Amazon Prime Video</option>
+                            <option value="337">Disney+</option>
+                            <option value="350">Apple TV+</option>
+                            <option value="531">Paramount+</option>
+                        </select>
+                        <div class="error-message" id="streaming-error"></div>
+                    </div>
+
+                    <div>
+                        <label>Mindestbewertung <span class="required">*</span></label>
+                        <input type="number" id="mindestens-bewertung" min="0" max="10" step="0.1" required
+                            placeholder="0-10">
+                        <div class="error-message" id="bewertung-error"></div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="kinderfreundlich">
+                        <label for="kinderfreundlich">Kinderfreundlich (FSK 0-6)</label>
+                    </div>
+                </div>
+
+                <button type="submit"><b>Filme suchen</b></button>
+            </form>
+        </section>
+
+        <section class="ausgabebereich">
+            <div class="subtitle">
+                <h2>Ausgabebereich</h2>
+                <div id="ausgabe-hinweis">
+                    <p>Da war wohl noch niemand auf der Suche nach einem Film</p>
+                    <p>Wähle deine Wunschkriterien im Filter aus nach wenigen Sekunden zeigen wir dir die passenden
+                        Filme</p>
+                </div>
+            </div>
+            <div class="movie-grid" id="ausgabebereich"></div>
+            <canvas id="filmReel" width="300" height="200" style="display: none;"></canvas>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content container">
+            <div class="footer-section">
+                <h4 class="highlight">Kontakt</h4>
+                <p>Email: colin.felber@stud.hslu.ch</p>
+                <p>Adresse: Suurstoffi 1, 6343 Rotkreuz</p>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="highlight">Quick Links</h4>
+                <ul>
+                    <li><a href="#anwendungsbeschreibung">Information</a></li>
+                    <li><a href="#eingabebereich">Eingabe</a></li>
+                    <li><a href="#ausgabebereich">Ausgabe</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="highlight">Folgen uns</h4>
+                <ul>
+                    <li><a href="https://github.com/Stonehouse1703">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 MovieNight Finder. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
