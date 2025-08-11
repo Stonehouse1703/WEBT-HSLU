@@ -1,5 +1,5 @@
 # MovieNight Finder – Abschlussprojekt Web Technologien FS25
-
+![MainPage](images/mainPage.png)
 ## Projektinformationen
 
 - **Modul:** Web Technologien FS25  
